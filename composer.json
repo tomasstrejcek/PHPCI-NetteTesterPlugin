@@ -15,5 +15,10 @@
                 {"name": "NetteTester", "class": "NetteTesterPlugin"}
             ]
         }
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "ECH\\PhpCIPlugins\\": "" 
+        }
+    },
 }
