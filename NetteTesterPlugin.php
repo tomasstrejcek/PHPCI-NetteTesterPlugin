@@ -78,7 +78,7 @@ class NetteTesterPlugin implements Plugin {
         }
         if ($this->path !== null) {
             //$dirPath = $this->phpci->buildPath . DIRECTORY_SEPARATOR . $this->directory;
-            $cmd .= ' '.$this->directory;
+            $cmd .= ' '.$this->path;
         }
         chdir($this->phpci->buildPath);
         $output = '';
