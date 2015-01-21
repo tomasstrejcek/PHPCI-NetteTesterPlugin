@@ -1,0 +1,11 @@
+{
+    "name": "tomasstrejcek/phpci-nette-tester-plugin",
+    "description": "Plugin for PHPCI",
+    "authors": [
+        {
+            "name": "tomas.strejcek",
+            "email": "tomas.strejcek@ecommerceholding.cz"
+        }
+    ],
+    "require": {}
+}
