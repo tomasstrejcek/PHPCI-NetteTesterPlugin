@@ -8,16 +8,13 @@
 
 namespace ECH\PhpCIPlugins;
 
+use PHPCI\Helper\Lang;
 use PHPCI\Plugin;
 
 
 use PHPCI\Builder;
 use PHPCI\Model\Build;
 
-/**
- * Atoum plugin, runs Atoum tests within a project.
- * @package PHPCI\Plugin
- */
 class NetteTesterPlugin implements Plugin {
     private $args;
     private $config;

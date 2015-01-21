@@ -7,5 +7,13 @@
             "email": "tomas.strejcek@ecommerceholding.cz"
         }
     ],
-    "require": {}
+    "require": {},
+    "extra": {
+        "phpci": {
+            "pluginNamespace": "ECH\\PhpCIPlugins\\",
+            "suppliedPlugins": [
+                {"name": "NetteTester", "class": "NetteTesterPlugin"}
+            ]
+        }
+    }
 }
