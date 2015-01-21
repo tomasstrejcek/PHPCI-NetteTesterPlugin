@@ -1,0 +1,5 @@
+\ECH\PhpCIPlugins\NetteTesterPlugin:
+    path: "tests"
+    executable: "vendor/bin/tester"
+    php_ini: true
+    show_skipped_test: true
