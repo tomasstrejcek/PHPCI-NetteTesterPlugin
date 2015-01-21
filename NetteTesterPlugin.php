@@ -83,6 +83,7 @@ class NetteTesterPlugin implements Plugin {
         chdir($this->phpci->buildPath);
         $output = '';
         $status = true;
+        $this->phpci->log($cmd);
         exec($cmd, $output);
         if (count(preg_grep("/Success \(/", $output)) == 0) {
             $status = false;
