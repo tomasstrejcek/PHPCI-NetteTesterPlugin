@@ -54,6 +54,10 @@ class NetteTesterPlugin implements Plugin {
             $this->coverage = $options['coverage'];
         }
 
+        if (isset($options['coverage_path'])) {
+            $this->coveragePath = $options['coverage_path'];
+        }
+
     }
     /**
      * Run the Atoum plugin.
@@ -68,13 +72,16 @@ class NetteTesterPlugin implements Plugin {
             $cmd .= " {$this->args}";
         }
         if ($this->phpIni !== null) {
-            $cmd .= " -c {$this->phpIni}";
+            $cmd .= " -c ".$this->path."/php.ini";
         }
         if ($this->skippedTests !== null) {
             $cmd .= $this->skippedTests;
         }
         if ($this->coverage !== null) {
             $cmd .= ' --coverage coverage.html';
+        }
+        if ($this->coveragePath !== null) {
+            $cmd .= ' --coverage-src '.$this->coveragePath;
         }
         if ($this->path !== null) {
             //$dirPath = $this->phpci->buildPath . DIRECTORY_SEPARATOR . $this->directory;
@@ -83,9 +90,10 @@ class NetteTesterPlugin implements Plugin {
         chdir($this->phpci->buildPath);
         $output = '';
         $status = true;
+        echo $cmd;
         $this->phpci->log($cmd);
         exec($cmd, $output);
-        if (count(preg_grep("/Success \(/", $output)) == 0) {
+        if (count(preg_grep("/OK/", $output)) == 0) {
             $status = false;
             $this->phpci->log($output);
         }

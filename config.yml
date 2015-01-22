@@ -3,3 +3,5 @@
     executable: "vendor/bin/tester"
     php_ini: true
     show_skipped_test: true
+    coverage: true # xdebug required
+    coverage_path: "./app"
