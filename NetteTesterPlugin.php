@@ -90,7 +90,7 @@ class NetteTesterPlugin implements Plugin {
         chdir($this->phpci->buildPath);
         $output = '';
         $status = true;
-        echo $cmd;
+     
         $this->phpci->log($cmd);
         exec($cmd, $output);
         if (count(preg_grep("/OK/", $output)) == 0) {
