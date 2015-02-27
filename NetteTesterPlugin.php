@@ -87,6 +87,8 @@ class NetteTesterPlugin implements Plugin {
             //$dirPath = $this->phpci->buildPath . DIRECTORY_SEPARATOR . $this->directory;
             $cmd .= ' '.$this->path;
         }
+
+	$curdir = getcwd();
         chdir($this->phpci->buildPath);
         $output = '';
         $status = true;
@@ -101,6 +103,7 @@ class NetteTesterPlugin implements Plugin {
             $status = false;
             $this->phpci->log(Lang::get('no_tests_performed'));
         }
+	chdir($curdir);
         return $status;
     }
 
